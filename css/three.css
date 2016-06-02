@@ -1,0 +1,14 @@
+.font{
+	font-size: 28px;
+	font-weight: 800;
+	margin-bottom: 15px;
+	margin-top:20px;
+	border-bottom: 2px solid #6e6e6e;
+}
+.class-btn{
+	margin-bottom: 10px;
+}
+.btn{
+	width: 100px;
+	color: #6e6e6e;
+}

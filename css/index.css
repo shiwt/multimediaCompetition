@@ -1,0 +1,40 @@
+/*导航条*/
+.nav_color{
+	background-color: #81c8e9; 
+	margin: 0px;
+	height: 70px;
+}
+.btn_color{
+	background-color: #019fe9;
+}
+/*图片轮播*/
+.carousel-inner{
+	width: 70%;
+	margin: auto;
+}
+.search_form{
+	margin-top: 8px;
+}
+.row{
+	margin: 10px;
+}
+
+.div_background{
+	margin:0px;
+	background:-webkit-radial-gradient(white ,#8f9fa6);
+}
+/*排行榜*/
+.bc{
+	height: 315px;
+	background-color:#abc8d6;
+}
+
+/*分类按钮*/
+.class-btn{
+	margin-top: 18px;
+}
+.btn-info{
+	width: 230px;
+	height: 40px;
+	display: block;	
+}

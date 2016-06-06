@@ -1,3 +1,11 @@
+/*面包屑*/
+.breadcrumb{
+	font-family:微软雅黑;
+	font-size: 1.5em;
+	height: 25px;
+	background-color: white;
+}
+/*疾病,用药的字体*/
 .font{
 	font-size: 28px;
 	font-weight: 800;
@@ -5,10 +13,36 @@
 	margin-top:20px;
 	border-bottom: 2px solid #6e6e6e;
 }
+/*按钮样式*/
 .class-btn{
 	margin-bottom: 10px;
 }
-.btn{
+.btnn{
 	width: 100px;
 	color: #6e6e6e;
+}
+/*下面的药品*/
+.med{
+	margin-right: 40px;
+	margin-left: 40px;
+}
+.med_img{
+	width: 130px;
+	height: 130px;
+	margin-bottom: 5px;
+}
+.med_mar{
+	margin: 15px 25px 25px 20px;
+}
+.typeface{
+	font-family:微软雅黑;
+	font-size: 1.2em;
+	color: black;
+}
+/*病的图片大小*/
+.illimg{
+	margin-top: 20px;
+	margin-left: 20px;
+	width: 130px;
+	height: 140px;
 }

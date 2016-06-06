@@ -6,6 +6,7 @@ $user_name = $_POST['username'];
 $pd1 = $_POST['password1'];
 $pd2 = $_POST['password2'];
 $email = $_POST['email'];
+$image="../img/head/0.png";
 /*$like = $_POST['like'];*/
 /*echo "1";*/
 if ($pd1 == $pd2) {
@@ -22,7 +23,7 @@ if ($pd1 == $pd2) {
 	{
 	
 	//echo "$user_name<br>$pd2<br>$email<br>$like<br>";
-	$query = "INSERT INTO `lym`.`user` (`user_name`, `password`, `email`, `interested`, `user_img`, `flag`) values('$user_name','$pd2','$email','$like','../path/img/default.jpg',1)";
+	$query = "INSERT INTO `lym`.`user` (`user_name`, `password`, `email`, `user_img`, `flag`) values('$user_name','$pd2','$email','$image',1)";
 	$result = mysqli_query($conn,$query);
 	//echo $result ? '插入成功' : '插入失败，Mysql错误是：' . mysql_error();
 	if ($result) {

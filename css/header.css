@@ -1,0 +1,19 @@
+/*导航条*/
+.nav_color{
+	background-color: #81c8e9; 
+	margin: 0px;
+	height: 70px;
+
+}
+.navbar-brand {
+	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+	font-size: 2em;
+	color: #0e5c81;
+}
+.btn_color{
+	background-color: #019fe9;
+}
+.cnzz-event{
+	font-family:微软雅黑;
+	font-size: 1.5em;
+}

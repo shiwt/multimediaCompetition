@@ -1,10 +1,52 @@
-input{
+/*面包屑*/
+.breadcrumb{
+	font-family:微软雅黑;
+	font-size: 1.5em;
+	height: 50px;
+	background-color: white;
+}
+/*图片右边分割线*/
+
+.pic{
+	height: 300px;
+	border-right: 1px solid black;
+
+}
+/*搜索结果*/
+.a_style{
+	display: inline-block;
+	margin-bottom: 1em;
+	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+	font-size: 2em;
+	color: #0e5c81;
+}
+/*中间与最下方选择的间隔*/
+.kongge{
+	margin-bottom: 4em;
+}
+
+/*导航栏搜索框 以及最下方选择*/
+
+/*下面选择按钮的样式*/
+.class_input{
 	border: 0px;
 	background-color: #09f;
-	height: 40px;
-	width: 120%;
+	height: 50px;
+	width: 150%;
 }
-.a_style{
-	font-size: 20px;
-	/* margin-bottom: 30px; */
+/*最下面的选择*/
+.buwei_style{
+	font-family:微软雅黑;
+	font-size: 1.5em;
+}
+.col-md-1{
+	margin:20px;
+
+}
+/*类图片*/
+.classimg{
+	margin-top: 20px;
+	width: 200px;
+	height: 200px;
+	padding-right: 40px;
 }

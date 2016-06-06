@@ -1,0 +1,69 @@
+/*面包屑*/
+.breadcrumb{
+	font-family:微软雅黑;
+	font-size: 1.5em;
+	height: 25px;
+	background-color: white;
+}
+
+
+/*药品图片*/
+.med_img{
+	width: 230px;
+	height: 230px;
+}
+
+/*概述,说明书字体样式*/
+.font{
+	font-family: 微软雅黑;
+	font-size: 2em;
+	font-weight: bold;
+	color: black;
+	margin-bottom: 15px;
+}
+
+/*说明书*/
+
+.span1{
+	font-family: 微软雅黑;
+	font-size: 1.2em;
+	display: inline-block;
+	width: 150px;
+}
+tr{
+	margin-bottom: 10px;
+	font-family: 微软雅黑;
+	font-size: 1.2em;
+}
+/*说明书*/
+.instruction{
+	margin-bottom: 30px;
+}
+.load{
+	font-family: 微软雅黑;
+	font-size: 1.2em;
+}
+.shuoming{
+	font-family: 微软雅黑;
+	font-size: 1.2em;
+	color: black;
+	padding:20px;
+	border: 1px solid black;
+}
+/*评论区*/
+.commet{
+	border: 1px solid #99CCFF;
+	margin-bottom: 10px;
+}
+.ziti{
+	font-family: 微软雅黑;
+	font-size: 1.2em;
+}
+.usern{
+	font-size: 1.5em;
+	color: blue;
+}
+textarea{
+	width: 93%;
+	height: 20%;
+}

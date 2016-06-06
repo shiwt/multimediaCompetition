@@ -3,24 +3,28 @@ header("Content-type:text/html;charset=utf-8");
 session_start();
 $username = $_POST['username'];
 $pwd= $_POST['password'];
-$people = $_POST['people'];
+//$people = $_POST['people'];
 
-
-if(empty(trim($username))||empty(trim($pwd))){
+/*if(empty(trim($username))||empty(trim($pwd))){
   echo "用户名或者密码不能为空！";
+}*/
+if($username==""||$pwd=="")
+{
+  echo "<script language='javascript'> alert('用户名或者密码不能为空!');history.back();</script>";
 }
 else{
-$_SESSION["user_name"]=$username;
+//$_SESSION["user_name"]=$username;
 include("conn.php");
 
-
-if($people=='admins'){
+/*if($people=='admins'){
+  echo "4<br />";
   $sql="select admin_name,password from admin where admin_name='$username'";
   $rs=mysqli_query($conn,$sql);
   if($rs){
     $row = mysqli_fetch_assoc($rs);
     if($row['password']==$pwd){
-      echo "<script>window.location ='adm_index.php'</script>";
+      $_SESSION["user_name"]=$username;
+      echo "<script> history.back();</script>";
     }
     else{
       echo "<script language='javascript'> alert('密码错误！请重新登录');</script>";
@@ -29,23 +33,32 @@ if($people=='admins'){
   else{
     echo "<script language='javascript'> alert('用户名不存在!');</script>";
   }
-}
-if($people=='students'){
-  $sql="select admin_name,password from user where admin_name='$username'";
+}*/
+/*if($people=='students'){*/
+  $sql="select * from user where user_name='".$username."'";
   $rs=mysqli_query($conn,$sql);
-  if($rs){
+  //if($rs){
     $row = mysqli_fetch_assoc($rs);
-    if($row['password']==$pwd){
-      echo "<script>window.location ='adm_index.php'</script>";
+    if($row['user_name']=="")
+    {
+      echo "<script language='javascript'> alert('用户名不存在!');history.back();</script>";
     }
-    else{
-      echo "<script language='javascript'> alert('密码错误！请重新登录');</script>";
+    else
+    {
+      if($row['password']==$pwd){
+        $_SESSION["user_name"]=$username;
+        echo "<script> history.back();</script>";
+      }
+      else{
+        echo "<script language='javascript'>alert('密码错误！请重新登录'); history.back();</script>";
+      }
     }
-  }
-  else{
-    echo "<script language='javascript'> alert('用户名不存在!');</script>";
-  }
-}
+  //}
+  /*else{
+    echo "<script language='javascript'> alert('用户名不存在!');history.back();</script>";
+  }*/
+//}
+/*echo "<script> history.back();</script>";*/
 }
 
 

@@ -1,8 +1,8 @@
 <?php
 header("Content-type:text/html;charset=utf-8");
+session_start();
 include 'conn.php';
 $class_ill = $_GET['class'];
-$num = $_GET['num'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,70 +16,62 @@ $num = $_GET['num'];
 </head>
 <body>
 	 <!-- ***********************页面头部导航条** *********************** -->
-  <nav class="navbar nav_color" style="background-color: #81c8e9; 
-	margin: 0px;
-	height: 70px;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <!-- button是为了在页面缩小的时候右边有一个类似菜单的东西  -->
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">
-          <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
-          药品检索平台
-        </a>
-
-      </div>
-
-      <!--  导航区右边搜索框与按钮 -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-right" role="search">
-          <ul class="nav navbar-nav cnzz-event" id="index-right-nav">
-            <li>
-              <a data-toggle="modal" data-target="#dlModal">登录</a>
-            </li>
-            <li class="divider">
-              <a data-toggle="modal" data-target="#zcModal">注册</a>
-            </li>
-          </ul>
-
-          <div class="form-group" style="margin-top: 8px;">
-            <input type="text" class="form-control" placeholder="Search">
-          <button type="button" class="btn btn_color" style="background-color: #019fe9;">Search</button></div>
-        </form>
-      </div>
-      <!-- /.navbar-collapse --> </div>
-    <!-- /.container-fluid --> </nav>
-  <!-- ***********************页面头部导航条结束************************* -->
-
-
-<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="../js/bootstrap.min.js"></script>
+   <?php 
+  if(!isset($_SESSION['user_name']))
+    include 'header.php';
+  else
+    include("header_after.php");
+    ?>
 <!-- ***********************页面头部导航条结束 *********************** -->
 
-<div class="container-fluid">
+<div class="container-fluid breadcrumb">
 <?php
-echo "首页"." -> "."$class_ill";
+  echo "<a href='index.php'>首页</a>"." -> "."$class_ill";
 ?>
   </div>
-<div class="container-fluid">
-<div class="col-md-3 pic">
-<img src="" alt="图片无法加载">
+<div class="container-fluid kongge">
+<div class="col-md-offset-2 col-md-2 pic">
+<?php 
+  switch ($class_ill) {
+    case '呼吸系统':
+      echo "<img class='classimg' src='../img/huxi.jpg' alt='图片无法加载'>";
+      break;
+    case '循环系统':
+      echo "<img class='classimg' src='../img/xunhuan.jpg' alt='图片无法加载'>";
+      break;
+    case '消化系统':
+      echo "<img class='classimg' src='../img/xiaohua.jpg' alt='图片无法加载'>";
+      break;
+    case '血液系统':
+      echo "<img class='classimg' src='../img/xueye.jpg' alt='图片无法加载'>";
+      break;
+    case '内分泌系统':
+      echo "<img class='classimg' src='../img/neifenmi.jpg' alt='图片无法加载'>";
+      break;
+    case '泌尿系统':
+      echo "<img class='classimg' src='../img/miniao.jpg' alt='图片无法加载'>";
+      break;
+    case '代谢和营养':
+      echo "<img class='classimg' src='../img/daixie.jpg' alt='图片无法加载'>";
+      break;
+    case '结缔组织和风湿':
+      echo "<img class='classimg' src='../img/jiedi.jpg' alt='图片无法加载'>";
+      break;
+    case '其他':
+      echo "<img class='classimg' src='../img/qita.jpg' alt='图片无法加载'>";
+      break;
+  }
+  ?>
 
 </div>
 
-<div class="col-md-6">
+<div class="col-md-5 col-md-offset-1">
 <?php
-  $query = "select * from illness where class_organ = '".$class_ill."'";
+  $query = "select * from illness where class_system = '".$class_ill."'";
   $result = mysqli_query($conn,$query);
   while($row = mysqli_fetch_array($result,MYSQL_BOTH))
   {
-    echo "<a class='a_style' href=''>$row[1]</a><br />";
+    echo "<a class='a_style' href='three.php?ill=$row[1]&class_ill=$class_ill'>$row[1]</a><br />";
   }
 ?>
 
@@ -88,38 +80,38 @@ echo "首页"." -> "."$class_ill";
 
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid buwei_style ">
   <div class="col-md-1">
-    <input type="button" value="呼吸系统" id='8' onclick="refresh8()">
+    <input  class='class_input' type="button" value="呼吸系统" id='呼吸系统' onclick="refresh8()">
   </div>
   <div class="col-md-1">
-    <input type="button" value="循环系统" id='9' onclick="refresh9()">
+    <input  class='class_input' type="button" value="循环系统" id='循环系统' onclick="refresh9()">
   </div>
   <div class="col-md-1">
-    <input type="button" value="消化系统" id='10' onclick="refresh10()">
+    <input  class='class_input' type="button" value="消化系统" id='消化系统' onclick="refresh10()">
   </div>
   <div class="col-md-1">
-    <input type="button" value="泌尿系统" id='11' onclick="refresh11()">
+    <input  class='class_input' type="button" value="泌尿系统" id='泌尿系统' onclick="refresh11()">
   </div>
   <div class="col-md-1">
-    <input type="button" value="血液系统" id='12' onclick="refresh12()">
+    <input  class='class_input' type="button" value="血液系统" id='血液系统' onclick="refresh12()">
   </div>
   <div class="col-md-1">
-    <input type="button" value="内分泌系统" id='13' onclick="refresh13()">
+    <input  class='class_input' type="button" value="内分泌系统" id='内分泌系统' onclick="refresh13()">
   </div>
   <div class="col-md-1">
-    <input type="button" value="代谢和营养" id='14' onclick="refresh14()">
+    <input  class='class_input' type="button" value="代谢和营养" id='代谢和营养' onclick="refresh14()">
   </div>
   <div class="col-md-1">
-    <input type="button" value="结缔和风湿" id='15' onclick="refresh15()">
+    <input  class='class_input' type="button" value="结缔和风湿" id='结缔和风湿' onclick="refresh15()">
   </div>
   <div class="col-md-1">
-    <input type="button" value="其他" id='16' onclick="refresh16()">
+    <input  class='class_input' type="button" value="其他" id='其他1' onclick="refresh16()">
   </div>
 </div>
 <?php
 /*echo "<script language='javascript'> alert('swtswtswt');</script>";*/
-echo "<script language='javascript'> document.getElementById('".$num."').style.backgroundColor = '#fff';</script>";
+echo "<script language='javascript'> document.getElementById('".$class_ill."').style.backgroundColor = '#fff';</script>";
 ?>
 
 

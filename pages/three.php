@@ -1,8 +1,14 @@
 <?php
 header("Content-type:text/html;charset=utf-8");
+session_start();
 include 'conn.php';
-//$ill = $_GET['ill'];
+$ill = $_GET['ill'];
 
+if(isset($_GET['class_ill']))
+  $class_ill = $_GET['class_ill'];
+
+$sql="update illness set clicknum = clicknum + 1 where ill_name = '$ill'";
+$rs=mysqli_query($conn,$sql);
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,81 +22,102 @@ include 'conn.php';
 </head>
 <body>
 	 <!-- ***********************页面头部导航条** *********************** -->
-  <nav class="navbar nav_color" style="background-color: #81c8e9; 
-	margin: 0px;
-	height: 70px;">
-    <div class="container-fluid ">
-      <div class="navbar-header">
-        <!-- button是为了在页面缩小的时候右边有一个类似菜单的东西  -->
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">
-          <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
-          药品检索平台
-        </a>
-
-      </div>
-
-      <!--  导航区右边搜索框与按钮 -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-right" role="search">
-          <ul class="nav navbar-nav cnzz-event" id="index-right-nav">
-            <li>
-              <a data-toggle="modal" data-target="#dlModal">登录</a>
-            </li>
-            <li class="divider">
-              <a data-toggle="modal" data-target="#zcModal">注册</a>
-            </li>
-          </ul>
-
-          <div class="form-group" style="margin-top: 8px;">
-            <input type="text" class="form-control" placeholder="Search">
-          <button type="button" class="btn btn_color" style="background-color: #019fe9;">Search</button></div>
-        </form>
-      </div>
-      <!-- /.navbar-collapse --> </div>
-    <!-- /.container-fluid --> </nav>
+   <?php 
+  if(!isset($_SESSION['user_name']))
+    include 'header.php';
+  else
+    include("header_after.php");
+    ?>
   <!-- ***********************页面头部导航条结束************************* -->
-
+<div class="container-fluid breadcrumb">
+<?php
+if(!isset($_GET['class_ill']))
+  echo "<a href='index.php'>首页</a>"." -> "."$ill";
+else{
+  switch ($class_ill) {
+    case '头颈部':
+    case '胸部':
+    case '腰部':
+    case '腹部':
+    case '骨骼':
+    case '皮肤':
+    case '其他':
+      echo "<a href='index.php'>首页</a>"." -> "."<a href='second_organ.php?class=$class_ill'>$class_ill</a>"." -> "."$ill";
+      break;
+    case "呼吸系统": 
+    case "循环系统": 
+    case "消化系统":
+    case "泌尿系统":
+    case "血液系统":
+    case "内分泌系统":
+    case "代谢和营养":
+    case "结缔组织和风湿":
+    case "其他":
+      echo "<a href='index.php'>首页</a>"." -> "."<a href='second_system.php?class=$class_ill'>$class_ill</a>"." -> "."$ill";
+      break;
+    case '住院检诊':
+    case '传染病检诊':
+    case '定点检诊':
+      echo "<a href='index.php'>首页</a>"." -> "."<a href='second_system.php?class=$class_ill'>$class_ill</a>"." -> "."$ill";
+      break;
+  }
+}
+?>
+  </div>
 
 <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="../js/bootstrap.min.js"></script>
 <!-- ***********************页面头部导航条结束 *********************** -->
-
+<!-- <?php
+//echo "$ill"."<br />";
+?> -->
 
 <div class="container-fluid">
-<p class="font">高血压</p>
+<p class="font"><?php echo $ill ?></p>
 </div>
 
 <div class="container-fluid">
   <div class="col-md-3">
-    <img src="" alt="图片无法加载">
+  <?php 
+    $mysql = "select * from illness where ill_name='$ill'";
+    $myresult = mysqli_query($conn,$mysql);
+    $sqlill = mysqli_fetch_array($myresult,MYSQLI_BOTH);
+  echo "<img class='illimg' src='../img/".$sqlill['illness_img']."' alt='图片无法加载'>"; 
+  ?>
+    
   </div>
-  <div class="col-md-2">
-    <div class="class-btn">
-        <button class="btn" onclick="introduction()" id="introduction">简介</button>
+  <div class="col-md-2 ">
+    <div class="class-btn ">
+        <button class="btn btnn typeface" onclick="introduction_fun()" id="introduction">简介</button>
       </div>
       <div class="class-btn">
-        <button class="btn" onclick="cause()" id="cause">病理</button>
+        <button class="btn btnn typeface" onclick="cause_fun()" id="cause">病理</button>
       </div>
       <div class="class-btn">
-        <button class="btn" onclick="symptoms()" id="symptoms">症状</button>
+        <button class="btn btnn typeface" onclick="symptoms_fun()" id="symptoms">症状</button>
       </div>
       <div class="class-btn">
-        <button class="btn" onclick="checkway()" id="checkway">诊断</button>
+        <button class="btn btnn typeface" onclick="checkway_fun()" id="checkway">诊断</button>
       </div>
   </div>
   <div class="col-md-7">
-    
-    <div id="introduction_div">简介</div>
-    <div id="cause_div">病理</div>
-    <div id="symptoms_div">症状</div>
-    <div id="checkway_div">诊断</div>
+    <div id="introduction_div" class="typeface">
+    <?php
+    echo file_get_contents($sqlill['introduction']);
+    ?></div>
+    <div id="cause_div" class="typeface">
+    <?php
+    echo file_get_contents($sqlill['cause']);
+    ?></div>
+    <div id="symptoms_div" class="typeface">
+    <?php
+    echo file_get_contents($sqlill['symptoms']);
+    ?></div>
+    <div id="checkway_div" class="typeface">
+    <?php
+    echo file_get_contents($sqlill['checkway']);
+    ?></div>
 
   </div>
   
@@ -99,6 +126,28 @@ include 'conn.php';
 
 <div class="container-fluid">
 <p class="font">用药</p>
+</div>
+
+<div class="container-fluid">
+<div class="med">
+<?php
+
+$query = "select medicine_id from link where ill_id = (select id from illness where ill_name = '$ill')";
+$result = mysqli_query($conn,$query);
+  while($row = mysqli_fetch_array($result,MYSQLI_BOTH))
+  {
+    $s= "select * from medicine where id = ".$row['medicine_id'];
+    $r=mysqli_query($conn,$s);
+    $rd = mysqli_fetch_array($r,MYSQLI_BOTH);
+    if(isset($_GET['class_ill'])){
+    
+    echo "<div class='col-md-2  med_mar'><div><a href='four.php?med=".$rd['medicine_name']."&ill=$ill&class_ill=$class_ill'> <img class='med_img' src='".$rd['medicine_img']."' alt='图片无法加载'><p class='typeface'>".$rd['medicine_name']."</p></a></div></div>";}
+    else{
+        echo "<div class='col-md-2  med_mar'><div><a href='four.php?med=".$rd['medicine_name']."&ill=$ill'> <img class='med_img' src='".$rd['medicine_img']."' alt='图片无法加载'><p class='typeface'>".$rd['medicine_name']."</p></a></div></div>";
+    }
+  }
+?>
+</div>
 </div>
 
 <script src="../js/three.js"></script>

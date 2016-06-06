@@ -1,0 +1,16 @@
+.style{
+	font-family: 微软雅黑;
+	font-size: 1.5em;
+}
+.search_style{
+	display: inline-block;
+	font-family: 微软雅黑;
+	font-size: 1.3em;
+	margin: 10px;
+}
+hr{
+	border: 1px solid black;
+}
+.search_r{
+	margin-top: 45px;
+}

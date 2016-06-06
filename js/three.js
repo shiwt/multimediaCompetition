@@ -8,7 +8,7 @@ var intro = document.getElementById('introduction'),
 	checkway_div = document.getElementById('checkway_div');
 
 
-function introduction() {
+function introduction_fun() {
 	intro.style.backgroundColor = '#09f';
 	cause.style.backgroundColor = '#e6e6e6';
 	symptoms.style.backgroundColor = '#e6e6e6';
@@ -19,7 +19,7 @@ function introduction() {
 	checkway_div.style.display = 'none';
 }
 
-function cause(){
+function cause_fun(){
 	intro.style.backgroundColor = '#e6e6e6';
 	cause.style.backgroundColor = '#09f';
 	symptoms.style.backgroundColor = '#e6e6e6';
@@ -29,7 +29,7 @@ function cause(){
 	symptoms_div.style.display = 'none';
 	checkway_div.style.display = 'none';
 }
-function symptoms(){
+function symptoms_fun(){
 	intro.style.backgroundColor = '#e6e6e6';
 	cause.style.backgroundColor = '#e6e6e6';
 	symptoms.style.backgroundColor = '#09f';
@@ -39,7 +39,7 @@ function symptoms(){
 	symptoms_div.style.display = 'block';
 	checkway_div.style.display = 'none';
 }
-function checkway(){
+function checkway_fun(){
 	intro.style.backgroundColor = '#e6e6e6';
 	cause.style.backgroundColor = '#e6e6e6';
 	symptoms.style.backgroundColor = '#e6e6e6';
@@ -49,3 +49,15 @@ function checkway(){
 	symptoms_div.style.display = 'none';
 	checkway_div.style.display = 'block';
 }
+
+function start(){
+	intro.style.backgroundColor = '#09f';
+	cause.style.backgroundColor = '#e6e6e6';
+	symptoms.style.backgroundColor = '#e6e6e6';
+	checkway.style.backgroundColor = '#e6e6e6';
+	intro_div.style.display = 'block';
+	cause_div.style.display = 'none';
+	symptoms_div.style.display = 'none';
+	checkway_div.style.display = 'none';
+}
+start();

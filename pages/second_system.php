@@ -1,5 +1,5 @@
 <?php
-header("Content-type:text/html;charset=utf-8");
+//header("Content-type:text/html;charset=utf-8");
 session_start();
 include 'conn.php';
 $class_ill = $_GET['class'];
@@ -30,7 +30,7 @@ $class_ill = $_GET['class'];
 ?>
   </div>
 <div class="container-fluid kongge">
-<div class="col-md-offset-2 col-md-2 pic">
+<div class="col-md-offset-2 col-md-2 col-lg-2 col-sm-2 col-xs-2 pic">
 <?php 
   switch ($class_ill) {
     case '呼吸系统':
@@ -65,7 +65,7 @@ $class_ill = $_GET['class'];
 
 </div>
 
-<div class="col-md-5 col-md-offset-1">
+<div class="col-md-5  col-lg-5 col-sm-5 col-xs-5 col-md-offset-1">
 <?php
   $query = "select * from illness where class_system = '".$class_ill."'";
   $result = mysqli_query($conn,$query);
@@ -81,31 +81,31 @@ $class_ill = $_GET['class'];
 </div>
 
 <div class="container-fluid buwei_style ">
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input  class='class_input' type="button" value="呼吸系统" id='呼吸系统' onclick="refresh8()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input  class='class_input' type="button" value="循环系统" id='循环系统' onclick="refresh9()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input  class='class_input' type="button" value="消化系统" id='消化系统' onclick="refresh10()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input  class='class_input' type="button" value="泌尿系统" id='泌尿系统' onclick="refresh11()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input  class='class_input' type="button" value="血液系统" id='血液系统' onclick="refresh12()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input  class='class_input' type="button" value="内分泌系统" id='内分泌系统' onclick="refresh13()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input  class='class_input' type="button" value="代谢和营养" id='代谢和营养' onclick="refresh14()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input  class='class_input' type="button" value="结缔和风湿" id='结缔和风湿' onclick="refresh15()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input  class='class_input' type="button" value="其他" id='其他1' onclick="refresh16()">
   </div>
 </div>

@@ -1,5 +1,5 @@
 <?php
-header("Content-type:text/html;charset=utf-8");
+//header("Content-type:text/html;charset=utf-8");
 session_start();
 include("conn.php");
 if(isset($_GET['ill']))
@@ -175,7 +175,7 @@ else{
                 <p class="usern ziti"><?php echo $row1['user_name']; ?></p>
               </div>
               <div class='col-md-10'>
-                  <p class="ziti"><?php echo $row['comments']; ?></p>
+                  <p style="word-wrap:break-word" class="ziti"><?php echo $row['comments']; ?></p>
                   <p class="ziti"><?php echo $row['com_time']; ?></p>
               </div>
             </div>
@@ -193,3 +193,4 @@ echo "<form action='comments.php?userid=".$rd2['id']."&medid=".$rd['id']."' meth
 <?php 
 }
  ?>
+ 

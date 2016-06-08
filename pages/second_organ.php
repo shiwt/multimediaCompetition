@@ -1,5 +1,5 @@
 <?php
-header("Content-type:text/html;charset=utf-8");
+//header("Content-type:text/html;charset=utf-8");
 session_start();
 include 'conn.php';
 $class_ill = $_GET['class'];
@@ -31,7 +31,7 @@ echo "<a href='index.php'>首页</a> "." -> "."$class_ill";
   </div>
 
 <div class="container-fluid kongge">
-<div class="col-md-offset-2 col-md-2 pic">
+<div class="col-md-offset-2 col-md-2 col-lg-2 col-sm-2 col-xs-2 pic">
 <?php 
   switch ($class_ill) {
     case '头颈部':
@@ -60,7 +60,7 @@ echo "<a href='index.php'>首页</a> "." -> "."$class_ill";
 
 
 </div>
-<div class="col-md-5 col-md-offset-1">
+<div class="col-md-5 col-lg-5 col-sm-5 col-xs-5 col-md-offset-1">
 <?php
   $query = "select * from illness where class_organ = '".$class_ill."'";
   $result = mysqli_query($conn,$query);
@@ -76,25 +76,25 @@ echo "<a href='index.php'>首页</a> "." -> "."$class_ill";
 </div>
 
 <div class="container-fluid buwei_style ">
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input class='class_input'  type="button" value="头颈部" id='头颈部' onclick="refresh1()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input class='class_input'  type="button" value="胸部" id='胸部' onclick="refresh2()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input class='class_input'  type="button" value="腹部" id='腹部' onclick="refresh3()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input class='class_input'  type="button" value="腰部" id='腰部' onclick="refresh4()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input  class='class_input' type="button" value="骨骼" id='骨骼' onclick="refresh5()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input class='class_input'  type="button" value="皮肤" id='皮肤' onclick="refresh6()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input class='class_input'  type="button" value="其他" id='其他' onclick="refresh7()">
   </div>
 </div>

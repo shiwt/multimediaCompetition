@@ -15,7 +15,13 @@
 
 <?php 
 $search=$_POST['search'];
-include("conn.php");
+$conn = mysqli_connect("localhost","root","123456","lym"); 
+  if(mysqli_connect_error())
+  {
+  	printf('连接数据库出错:%s\n',mysqli_connect_error());
+  }
+$sql="set names utf8";
+mysqli_query($conn,$sql);
 
 $sql="select ill_name from illness where ill_name like '%$search%' or ill_vulgo like '%$search%' or keyword like '%$search%' or clinicdepart like '%$search%' or class_organ like '%$search%' or class_system like '%$search%' or class_check like '%$search%';";
 $rs=mysqli_query($conn,$sql);

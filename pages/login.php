@@ -1,5 +1,5 @@
 <?php
-header("Content-type:text/html;charset=utf-8");
+//header("Content-type:text/html;charset=utf-8");
 session_start();
 $username = $_POST['username'];
 $pwd= $_POST['password'];

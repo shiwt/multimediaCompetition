@@ -1,5 +1,5 @@
 <?php
-header("Content-type:text/html;charset=utf-8");
+//header("Content-type:text/html;charset=utf-8");
 include 'model.html';
 ?>
 <link rel="stylesheet" href="../css/header.css">

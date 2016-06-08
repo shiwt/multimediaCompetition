@@ -1,5 +1,5 @@
 <?php
-header("Content-type:text/html;charset=utf-8");
+//header("Content-type:text/html;charset=utf-8");
 session_start();
 include("conn.php");
 ?>
@@ -27,7 +27,7 @@ include("conn.php");
   <div class="row div_background">
     <!-- ***********************左边图片轮播************************* -->
 
-    <div class="col-md-9">
+    <div class="col-md-9 col-lg-9 col-sm-9 hidden-xs">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -43,7 +43,7 @@ include("conn.php");
     <!-- ***********************图片轮播结束************************* -->
 
     <!-- ***********************右边热度排行************************* -->
-    <div class="col-md-3 bc">
+    <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 bc">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
@@ -70,7 +70,7 @@ include("conn.php");
 
   <!-- ***********************下面左边分类按钮************************* -->
   <div class="container-fluid">
-    <div class="col-md-4">
+    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
       <div class="class-btn">
         <button class="btn btn-info" onclick="qiguan()">器官分类</button>
       </div>
@@ -85,7 +85,7 @@ include("conn.php");
     <!-- ***********************下面左边分类按钮结束************************* -->
 
     <!-- ************************下面右边分类类别*********************** -->
-    <div class="col-md-8 ">
+    <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8">
 
       <!--模块中的下面的面板-->
       <div class="tab-content">
@@ -94,30 +94,30 @@ include("conn.php");
         <div id="class-img1">
           <div role="tabpanel" class="tab-pane active" id="home">
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
                 <a href="second_organ.php?class=头颈部">
                   <img src="../img/toujing.jpg" alt="图片无法正常显示！"></a>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
                 <a href="second_organ.php?class=胸部">
                   <img src="../img/xiongbu.jpg" alt="图片无法正常显示！"></a>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
                 <a href="second_organ.php?class=腹部">
                   <img src="../img/fubu.jpg" alt="图片无法正常显示！"></a>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
                 <a href="second_organ.php?class=腰部">
                   <img src="../img/yaobu.jpg" alt="图片无法正常显示！"></a>
               </div>
             </div>
             <!-- 第二行 -->
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
                 <a href="second_organ.php?class=骨骼">
                   <img src="../img/guge.jpg" alt="图片无法正常显示！"></a>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
                 <a href="second_organ.php?class=皮肤">
                   <img src="../img/pifu.jpg" alt="图片无法正常显示！"></a>
               </div>
@@ -126,7 +126,7 @@ include("conn.php");
                 <img src="../tuibu.jpg" alt="图片无法正常显示！"></a>
             </div>
             -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
               <a href="second_organ.php?class=其他">
                 <img src="../img/qita.jpg" alt="图片无法正常显示！"></a>
             </div>
@@ -137,23 +137,23 @@ include("conn.php");
       <div id="class-img2">
         <div role="tabpanel" class="tab-pane" id="profile">
           <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
               <a href="second_system.php?class=呼吸系统">
                 <img src="../img/huxi.jpg" alt="图片无法正常显示！"></a>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
               <a href="second_system.php?class=循环系统">
                 <img src="../img/xunhuan.jpg" alt="图片无法正常显示！"></a>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
               <a href="second_system.php?class=消化系统">
                 <img src="../img/xiaohua.jpg" alt="图片无法正常显示！"></a>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
               <a href="second_system.php?class=泌尿系统">
                 <img src="../img/miniao.jpg" alt="图片无法正常显示！"></a>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
               <a href="second_system.php?class=血液系统">
                 <img src="../img/xueye.jpg" alt="图片无法正常显示！"></a>
             </div>
@@ -161,20 +161,20 @@ include("conn.php");
           <!-- 第二行 -->
           <div class="row">
 
-            <div class="col-md-2">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
               <a href="second_system.php?class=内分泌系统">
                 <img src="../img/neifenmi.jpg" alt="图片无法正常显示！"></a>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
               <a href="second_system.php?class=代谢和营养">
                 <img src="../img/daixie.jpg" alt="图片无法正常显示！"></a>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
               <a href="second_system.php?class=结缔组织和风湿">
                 <img src="../img/jiedi.jpg" alt="图片无法正常显示！"></a>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
               <a href="second_system.php?class=其他1">
                 <img src="../img/qita.jpg" alt="图片无法正常显示！"></a>
             </div>
@@ -185,16 +185,16 @@ include("conn.php");
       <!--           检诊分类          -->
       <div id="class-img3">
         <div role="tabpanel" class="tab-pane" id="messages">
-          <div class="row">
-            <div class="col-md-2">
+          <div class="row"> 
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
               <a href="second_check.php?class=住院检诊">
                 <img src="../img/no1.jpg" alt="图片无法正常显示！"></a>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
               <a href="second_check.php?class=传染病检诊">
                 <img src="../img/no2.jpg" alt="图片无法正常显示！"></a>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
               <a href="second_check.php?class=定点检诊">
                 <img src="../img/no3.jpg" alt="图片无法正常显示！"></a>
             </div>
@@ -214,8 +214,9 @@ include("conn.php");
     |
     <a href="#">联系我们</a>
     |
-    <a href="#">&copy;2016 Designed by LYM</a>
+    <a href="#">&copy;2016 Designed by shiwt</a>
   </p>
+  <p class="text-center"><a href="http://beian.pdxx.net/">豫ICP备16008507号</a></p>
 </footer>
 <!-- **********************页脚区************************* -->
 <script>

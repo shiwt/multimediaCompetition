@@ -1,5 +1,5 @@
 <?php
-header("Content-type:text/html;charset=utf-8");
+//header("Content-type:text/html;charset=utf-8");
 session_start();
 include 'conn.php';
 
@@ -32,7 +32,7 @@ $class_ill = $_GET['class'];
   </div>
 
 <div class="container-fluid kongge">
-<div class="col-md-offset-1 col-md-4 pic">
+<div class="col-md-offset-1 col-md-4 col-lg-4 col-sm-4 col-xs-4 pic">
 <?php 
   switch ($class_ill) {
     case '定点检诊':
@@ -50,7 +50,7 @@ $class_ill = $_GET['class'];
 
 </div>
 
-<div class="col-md-5 col-md-offset-1">
+<div class="col-md-5 col-lg-5 col-sm-5 col-xs-5 col-md-offset-1">
 <?php
 
   $query = "select * from illness where class_check = '".$class_ill."'";
@@ -65,15 +65,15 @@ $class_ill = $_GET['class'];
 
 
 </div>
-
+<!-- col-lg- col-sm- col-xs- -->
 <div class="container-fluid buwei_style ">
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input class='class_input' type="button" value="住院检诊" id='住院检诊' onclick="refresh17()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input  class='class_input' type="button" value="传染病检诊" id='传染病检诊' onclick="refresh18()">
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
     <input  class='class_input' type="button" value="定点检诊" id='定点检诊' onclick="refresh19()">
   </div>
   

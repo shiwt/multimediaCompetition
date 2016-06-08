@@ -1,4 +1,4 @@
-<?php $_SESSION['check']=0;include 'model.html'; ?>
+<?php include 'model.html'; ?>
 <link rel="stylesheet" href="../css/header.css">
 <!-- ***********************页面头部导航条** *********************** -->
   <nav class="navbar nav_color">

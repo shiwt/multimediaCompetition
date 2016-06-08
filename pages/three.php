@@ -1,5 +1,5 @@
 <?php
-header("Content-type:text/html;charset=utf-8");
+//header("Content-type:text/html;charset=utf-8");
 session_start();
 include 'conn.php';
 $ill = $_GET['ill'];
@@ -78,7 +78,7 @@ else{
 </div>
 
 <div class="container-fluid">
-  <div class="col-md-3">
+  <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
   <?php 
     $mysql = "select * from illness where ill_name='$ill'";
     $myresult = mysqli_query($conn,$mysql);
@@ -87,7 +87,7 @@ else{
   ?>
     
   </div>
-  <div class="col-md-2 ">
+  <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
     <div class="class-btn ">
         <button class="btn btnn typeface" onclick="introduction_fun()" id="introduction">简介</button>
       </div>
@@ -101,7 +101,7 @@ else{
         <button class="btn btnn typeface" onclick="checkway_fun()" id="checkway">诊断</button>
       </div>
   </div>
-  <div class="col-md-7">
+  <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
     <div id="introduction_div" class="typeface">
     <?php
     echo file_get_contents($sqlill['introduction']);

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2016-06-06 09:08:27
+Date: 2016-06-06 08:26:41
 */
 drop database  if exists lym;
 
@@ -115,7 +115,7 @@ CREATE TABLE `illness` (
 -- ----------------------------
 -- Records of illness
 -- ----------------------------
-INSERT INTO `illness` VALUES ('1', '复发性阿弗他口腔溃疡', '口腔溃疡', '复发性阿弗他口腔溃疡复发性阿弗他口炎复发性口疮口腔黏膜疾病', '../img/ill1.jpg', '../illness/1introduction.txt', '../illness/1cause.txt', '../illness/1checkway.txt', '0', '../illness/1symptoms.txt', '内科，内分泌科', '../illness/1treat.txt', '头颈部', '消化系统', '定点检诊', '177');
+INSERT INTO `illness` VALUES ('1', '复发性阿弗他口腔溃疡', '口腔溃疡', '复发性阿弗他口腔溃疡复发性阿弗他口炎复发性口疮口腔黏膜疾病', '../img/ill1.jpg', '../illness/1introduction.txt', '../illness/1cause.txt', '../illness/1checkway.txt', '0', '../illness/1symptoms.txt', '内科，内分泌科', '../illness/1treat.txt', '头颈部', '消化系统', '定点检诊', '148');
 INSERT INTO `illness` VALUES ('2', '甲状腺功能亢进症', '甲亢', '甲亢甲状腺激素', '../img/ill2.jpg', '../illness/2introduction.txt', '../illness/2treat.txt', '../illness/2checkway.txt', '0', '../illness/2symptoms.txt', '内分泌科', '../illness/2treat.txt', '头颈部', '内分泌系统', '定点检诊', '15');
 INSERT INTO `illness` VALUES ('3', '甲状腺功能减退', '甲减', '甲状腺功能减退甲减甲状腺激素', '../img/ill3.jpg', '../illness/3introduction.txt', '../illness/3treat.txt', '../illness/3checkway.txt', '0', '../illness/3symptoms.txt', '内分泌科', '../illness/3treat.txt', '头颈部', '内分泌系统', '定点检诊', '6');
 INSERT INTO `illness` VALUES ('4', '贝赫切特综合征', '白塞氏病', '贝赫切特综合征白塞氏病全身性免疫系统疾病', '../img/ill4.jpg', '../illness/4introduction.txt', '../illness/4treat.txt', '../illness/4checkway.txt', '0', '../illness/4symptoms.txt', '内科', '../illness/4treat.txt', '其他', '结缔组织和风湿', '定点检诊', '3');
@@ -335,7 +335,7 @@ INSERT INTO `medicine` VALUES ('1', '冰硼散', null, '../medicine/1.txt', '处
 INSERT INTO `medicine` VALUES ('2', '醋酸地塞米松粘贴片', '意可贴', '../medicine/2.txt', '非处方药', '国药准字H19991372', '../img/2.jpg', '深圳太太制药有限公司', '14.5', '76');
 INSERT INTO `medicine` VALUES ('3', '度米芬含片', null, '../medicine/3.txt', '处方药', '国药准字H20067091', '../img/3.jpg', '山西澳迩药业有限公司', '7.00', '9');
 INSERT INTO `medicine` VALUES ('4', '复方庆大霉素膜', '来易贴', '../medicine/4.txt', '非处方药', '国药准字H35021425', '../img/4.jpg', '厦门金日制药有限公司', '4.5', '1');
-INSERT INTO `medicine` VALUES ('5', '口腔溃疡含片', null, '../medicine/5.txt', '非处方药', '国药准字Z20050566', '../img/5.jpg', '西安迪赛生物药业有限责任公司', '4.9', '0');
+INSERT INTO `medicine` VALUES ('5', '口腔溃疡含片', null, '../medicine/5.txt', '非处方药', '国药准字Z20050566', '../img/5.JPG', '西安迪赛生物药业有限责任公司', '4.9', '0');
 INSERT INTO `medicine` VALUES ('6', '甲亢灵胶囊', null, '../medicine/6.txt', '处方药', '国药准字Z20090865', '../img/6.jpg', '陕西东泰制药有限公司', '24.7', '3');
 INSERT INTO `medicine` VALUES ('7', '甲巯咪唑', null, '../medicine/7.txt', '处方药', '进口药品注册证号H20120405', '../img/7.jpg', 'Merck KGaA，Darmstadt', '30.00', '2');
 INSERT INTO `medicine` VALUES ('8', '抑亢丸', '老君炉', '../medicine/8.txt', '处方药', '国药准字Z20055495', '../img/8.jpg', '吉林人民药业集团有限公司', '32.00', '0');
@@ -373,7 +373,7 @@ INSERT INTO `medicine` VALUES ('39', '内消瘰疬丸', null, '../medicine/39.tx
 INSERT INTO `medicine` VALUES ('40', '夏枯草胶囊', null, '../medicine/40.txt', '处方药', '国药准字Z19991033', '../img/40.jpg', '聚协昌（北京）药业有限公司', '22.50', '0');
 INSERT INTO `medicine` VALUES ('41', '利福平胶囊', null, '../medicine/41.txt', '处方药', '国药准字H44020771', '../img/41.jpg', '广东华南药业集团有限公司', '24.00', '0');
 INSERT INTO `medicine` VALUES ('42', '内消瘰疬片', null, '../medicine/42.txt', '处方药', '国药准字Z12020267', '../img/42.jpg', '天津中新药业集团股份有限公司隆顺榕制药厂', '50.00', '0');
-INSERT INTO `medicine` VALUES ('43', '克比热提片', null, '../medicine/43.txt', '处方药', '国药准字Z20054488', '../img/43.png', '陕西盘龙药业集团股份有限公司', '22.00', '0');
+INSERT INTO `medicine` VALUES ('43', '克比热提片', null, '../medicine/43.txt', '处方药', '国药准字Z20054488', '../img/43.jpg', '陕西盘龙药业集团股份有限公司', '22.00', '0');
 INSERT INTO `medicine` VALUES ('44', '夏枯草膏', '', '../medicine/44.txt', '处方药', '国药准字Z42021216', '../img/44.jpg', '黄石飞云制药有限公司', '28.00', '0');
 INSERT INTO `medicine` VALUES ('45', '异烟肼片', null, '../medicine/45.txt', '处方药', '国药准字H44020699', '../img/45.jpg', '广东华南药业集团有限公司', '4.00', '0');
 INSERT INTO `medicine` VALUES ('46', '注射用重组人干扰素α2b', '安达芬', '../medicine/46.txt', '非处方药', '国药准字S19980082', '../img/46.jpg', '北京医药公司', '39.5', '0');
